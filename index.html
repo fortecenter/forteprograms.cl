@@ -643,6 +643,53 @@
     line-height: 1.5;
   }
 
+  /* ── QUIZ CTA ── */
+  .quiz-cta {
+    margin: 0 16px 0;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, rgba(184,150,10,0.15) 0%, rgba(184,150,10,0.05) 100%);
+    border: 1.5px solid rgba(184,150,10,0.3);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .quiz-cta:active { transform: scale(0.98); }
+
+  .quiz-cta-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .quiz-cta-body { flex: 1; }
+
+  .quiz-cta-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--amber);
+    line-height: 1.1;
+    margin-bottom: 3px;
+  }
+
+  .quiz-cta-sub {
+    font-size: 12px;
+    color: rgba(244,241,236,0.55);
+    line-height: 1.4;
+  }
+
+  .quiz-cta-arrow {
+    font-size: 18px;
+    color: var(--amber);
+    flex-shrink: 0;
+  }
+
   /* ── FLOATING WA BUTTON ── */
   .wa-float {
     position: fixed;
@@ -781,6 +828,18 @@
   <div class="live-dot"><span class="dot"></span>Cupos disponibles</div>
   <div class="hero-divider"></div>
 </section>
+
+<!-- QUIZ CTA -->
+<div style="padding: 24px 0 8px;">
+  <a href="forte-quiz.html" class="quiz-cta">
+    <div class="quiz-cta-icon">🎯</div>
+    <div class="quiz-cta-body">
+      <div class="quiz-cta-title">¿No sabes qué programa elegir?</div>
+      <div class="quiz-cta-sub">Responde 10 preguntas y te decimos cuál es el ideal para ti</div>
+    </div>
+    <div class="quiz-cta-arrow">→</div>
+  </a>
+</div>
 
 <!-- HOW IT WORKS -->
 <section class="steps-section">
