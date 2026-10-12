@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arma tu semana · FORTE Programs</title>
+<meta name="description" content="Plantilla gratuita de Pablo Byers para organizar tu semana de entrenamiento según los días que tienes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#F4F1EC; --graphite:#2C2D35; --amber:#B8960A;
+    --g2:#363742; --g3:#43444f; --muted:#b9b4aa;
+    --fuerza:#B8960A; --cardio:#7FA7A0; --descanso:#6d6e78;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--graphite);color:var(--stone);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.5}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 16px 48px}
+  .brand{display:flex;justify-content:space-between;align-items:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.06em;font-size:15px;color:var(--stone)}
+  .brand b{color:var(--amber)}
+  .brand span{color:var(--muted);font-weight:600;letter-spacing:.04em}
+  .eyebrow{display:inline-block;margin-top:36px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.14em;font-size:13px;color:var(--amber);text-transform:uppercase}
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(46px,13vw,84px);line-height:.92;margin:8px 0 14px}
+  h1 em{font-style:normal;color:var(--amber)}
+  .rule{width:56px;height:3px;background:var(--amber);margin:18px 0}
+  .lead{font-weight:300;font-size:18px;color:var(--stone);max-width:560px}
+  .by{margin-top:14px;font-size:14px;color:var(--muted)}
+  h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;margin:44px 0 6px}
+  h2 small{display:block;font-size:13px;letter-spacing:.14em;color:var(--amber);font-weight:700;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:15px;margin-bottom:14px}
+  .seg{display:flex;gap:8px;flex-wrap:wrap}
+  .seg button{flex:1 1 0;min-width:72px;border:1.5px solid var(--g3);background:var(--g2);color:var(--stone);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;padding:14px 10px;border-radius:10px;cursor:pointer;transition:.15s}
+  .seg button small{display:block;font-family:'Barlow',sans-serif;font-weight:400;font-size:12px;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:2px}
+  .seg button[aria-pressed="true"]{border-color:var(--amber);background:var(--amber);color:var(--graphite)}
+  .seg button[aria-pressed="true"] small{color:var(--graphite)}
+  .why{margin-top:22px;background:var(--g2);border-left:3px solid var(--amber);padding:14px 16px;border-radius:0 10px 10px 0;font-size:15px}
+  .why b{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-size:13px;display:block;margin-bottom:2px}
+  .week{margin-top:18px;display:grid;gap:10px}
+  .day{display:grid;grid-template-columns:62px 1fr;gap:12px;background:var(--g2);border-radius:12px;padding:14px;align-items:start}
+  .day.rest{background:transparent;border:1px dashed var(--g3)}
+  .dname{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;line-height:1;padding-top:2px}
+  .day.rest .dname{color:var(--muted)}
+  .s + .s{margin-top:10px;padding-top:10px;border-top:1px solid var(--g3)}
+  .tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:99px;color:var(--graphite);margin-bottom:4px}
+  .tag.fuerza{background:var(--fuerza)} .tag.cardio{background:var(--cardio)} .tag.descanso{background:var(--descanso);color:var(--stone)}
+  .stitle{font-weight:600;font-size:17px}
+  .sdetail{font-size:14px;color:var(--muted);margin-top:2px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted)}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .rules{display:grid;gap:12px;margin-top:16px}
+  .rule-card{display:grid;grid-template-columns:44px 1fr;gap:12px;background:var(--g2);border-radius:12px;padding:16px}
+  .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:36px;line-height:1;color:var(--amber)}
+  .rule-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:20px;line-height:1.1;margin-bottom:4px}
+  .rule-card p{font-size:15px;color:var(--muted)}
+  .prog{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:16px}
+  .wk{background:var(--g2);border-radius:10px;padding:12px 8px;text-align:center}
+  .wk .bar{height:64px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:8px}
+  .wk .bar div{width:26px;background:var(--amber);border-radius:4px 4px 0 0}
+  .wk.deload .bar div{background:var(--cardio)}
+  .wk strong{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase}
+  .wk span{font-size:12px;color:var(--muted)}
+  .cta{margin-top:48px;background:var(--stone);color:var(--graphite);border-radius:16px;padding:26px 20px}
+  .cta .eyebrow{margin-top:0}
+  .cta h2{margin-top:6px;font-size:34px}
+  .cta p{font-size:16px;margin-top:8px}
+  .rec{margin-top:16px;background:#fff;border-radius:12px;padding:14px 16px;border:1.5px solid var(--amber)}
+  .rec b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;color:var(--graphite)}
+  .rec span{display:block;font-size:14px;color:#5a5b63;margin-top:2px}
+  .btn{display:block;text-align:center;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.06em;text-transform:uppercase;padding:16px;border-radius:12px;margin-top:12px}
+  .btn.primary{background:var(--graphite);color:var(--stone)}
+  .btn.ghost{border:2px solid var(--graphite);color:var(--graphite)}
+  .note{font-size:13px;color:var(--muted);margin-top:28px}
+  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--g3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;font-size:14px;text-transform:uppercase;color:var(--muted)}
+  footer .claim{color:var(--amber)}
+  @media (min-width:600px){ .day{grid-template-columns:80px 1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><div>FORTE <b>PRO</b>GRAMS</div><span>@pablobyers</span></div>
+
+  <span class="eyebrow">Regalo · Plantilla gratuita</span>
+  <h1>Arma tu <em>semana</em></h1>
+  <p class="lead">Entrenar mucho no sirve si las sesiones se pisan entre sí. Elige cuántos días tienes y qué priorizas, y te muestro cómo ordenar tu semana para avanzar de verdad.</p>
+  <p class="by">Por Pablo Byers · Kinesiólogo, CSCS · Atleta híbrido</p>
+  <div class="rule"></div>
+
+  <h2><small>Paso 1</small>¿Cuántos días puedes entrenar?</h2>
+  <p class="hint">Sé realista: es mejor cumplir 3 días todas las semanas que planificar 5 y hacer 2.</p>
+  <div class="seg" id="days" role="group" aria-label="Días por semana">
+    <button data-v="2" aria-pressed="false">2<small>días</small></button>
+    <button data-v="3" aria-pressed="true">3<small>días</small></button>
+    <button data-v="4" aria-pressed="false">4<small>días</small></button>
+    <button data-v="5" aria-pressed="false">5<small>días</small></button>
+  </div>
+
+  <h2><small>Paso 2</small>¿Qué quieres priorizar?</h2>
+  <p class="hint">Si no tienes claro, elige equilibrado.</p>
+  <div class="seg" id="focus" role="group" aria-label="Enfoque">
+    <button data-v="eq" aria-pressed="true">Equilibrado<small>fuerza + cardio</small></button>
+    <button data-v="fz" aria-pressed="false">Más fuerza<small>músculo y fuerza</small></button>
+    <button data-v="cd" aria-pressed="false">Más cardio<small>correr, bici, motor</small></button>
+  </div>
+
+  <h2><small>Tu plantilla</small>Tu semana</h2>
+  <div class="why" id="why"></div>
+  <div class="week" id="week"></div>
+  <div class="legend">
+    <span><i style="background:var(--fuerza)"></i>Fuerza</span>
+    <span><i style="background:var(--cardio)"></i>Cardio</span>
+    <span><i style="background:var(--descanso)"></i>Descanso activo</span>
+  </div>
+
+  <h2><small>La lógica</small>4 reglas para que funcione</h2>
+  <div class="rules">
+    <div class="rule-card"><div class="num">01</div><div><h3>Piernas lejos del cardio intenso</h3><p>Deja al menos 48 horas entre un día fuerte de piernas y tus intervalos. Si las cruzas, llegas cansado a las dos y ninguna rinde.</p></div></div>
+    <div class="rule-card"><div class="num">02</div><div><h3>La mayoría del cardio, suave</h3><p>Cerca del 80% de tu cardio debería ser en zona 2: un ritmo en que puedes conversar. Ahí construyes la base aeróbica sin quemarte.</p></div></div>
+    <div class="rule-card"><div class="num">03</div><div><h3>Que la fuerza cueste</h3><p>Termina cada serie sintiendo que te quedaban 2 o 3 repeticiones. Si te sobran 6, sube el peso; si no puedes mantener la técnica, bájalo.</p></div></div>
+    <div class="rule-card"><div class="num">04</div><div><h3>El descanso es parte del plan</h3><p>Los días libres no son flojera: es cuando tu cuerpo se adapta. Camina, duerme bien y llega fresco a la sesión más importante de la semana.</p></div></div>
+  </div>
+
+  <h2><small>Cómo avanzar</small>Ciclos de 4 semanas</h2>
+  <p class="hint">Repite la misma semana 4 veces, subiendo de a poco. Así entrenamos en FORTE.</p>
+  <div class="prog">
+    <div class="wk"><div class="bar"><div style="height:55%"></div></div><strong>Sem 1</strong><span>Base</span></div>
+    <div class="wk"><div class="bar"><div style="height:72%"></div></div><strong>Sem 2</strong><span>+ carga</span></div>
+    <div class="wk"><div class="bar"><div style="height:90%"></div></div><strong>Sem 3</strong><span>+ carga</span></div>
+    <div class="wk deload"><div class="bar"><div style="height:45%"></div></div><strong>Sem 4</strong><span>Descarga</span></div>
+  </div>
+  <p class="hint" style="margin-top:12px">En la semana 4 baja el volumen a la mitad. Después parte un nuevo ciclo un poco más arriba que el anterior.</p>
+
+  <section class="cta">
+    <span class="eyebrow">El siguiente paso</span>
+    <h2>Esta es la plantilla. Tu plan es otra cosa.</h2>
+    <p>Esta semana sirve para cualquiera. En FORTE Programs armo tu plan desde cero: tus objetivos, tu nivel, tus horarios, dónde entrenas y cualquier lesión que tengas. Con seguimiento por video y todo cargado en la app.</p>
+    <div class="rec" id="rec"></div>
+    <a class="btn primary" href="https://forteprograms.cl" target="_blank" rel="noopener">Ver los programas</a>
+    <a class="btn ghost" href="https://wa.link/s2jtps" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+  </section>
+
+  <p class="note">Esta es una guía general. Si tienes una lesión, dolor o una condición médica, consulta con un profesional antes de empezar.</p>
+
+  <footer><span>@forteprograms · #behappystayFORTE</span><span class="claim">Una vida sin límites</span></footer>
+</div>
+
+<script>
+const S = {
+  FI:  {t:'fuerza',  n:'Fuerza tren inferior', d:'Sentadilla o prensa, peso muerto rumano, zancadas, gemelos y core. 4–5 ejercicios, 3–4 series.'},
+  FS:  {t:'fuerza',  n:'Fuerza tren superior', d:'Press, remo, dominadas (asistidas si hace falta), press de hombro y facepull. 4–5 ejercicios, 3–4 series.'},
+  FBA: {t:'fuerza',  n:'Fuerza full body A', d:'Sentadilla, press de banca, remo, plancha. 3–4 series de 6–10 repeticiones.'},
+  FBB: {t:'fuerza',  n:'Fuerza full body B', d:'Peso muerto rumano, press de hombro, dominada o jalón, zancadas. 3–4 series de 6–10 repeticiones.'},
+  FBC: {t:'fuerza',  n:'Fuerza full body C', d:'Prensa o step-up, press inclinado, remo con mancuerna, hip thrust. 3 series de 8–12 repeticiones.'},
+  FB:  {t:'fuerza',  n:'Fuerza full body', d:'Un ejercicio de piernas, uno de cadera, un empuje, una tracción y core. 3 series.'},
+  Z2C: {t:'cardio',  n:'+ 15–20 min zona 2', d:'Al final de la sesión: bici, remo o trote suave, conversando.'},
+  Z2:  {t:'cardio',  n:'Cardio suave (zona 2)', d:'30–45 min a un ritmo en que puedes conversar. Trote, bici, remo o caminata en pendiente.'},
+  Z2L: {t:'cardio',  n:'Cardio largo suave', d:'50–75 min en zona 2. La sesión que más construye tu base aeróbica.'},
+  INT: {t:'cardio',  n:'Intervalos', d:'10 min de calentamiento + 6–8 × 1 min fuerte / 1–2 min suave. Debe costar, pero terminas entero.'},
+  INTC:{t:'cardio',  n:'+ 10 min intervalos cortos', d:'Al final: 8 × 30 s fuerte / 30 s suave en bici o remo.'},
+  R:   {t:'descanso',n:'Descanso activo', d:'Camina, estira o haz 10–15 min de movilidad.'}
+};
+const DAYS = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+const T = {
+  '2eq':{w:[['FBA','Z2C'],['R'],['R'],['FBB','Z2C'],['R'],['R'],['R']], y:'Con 2 días, cada sesión tiene que hacer de todo: fuerza para todo el cuerpo y un poco de cardio al final. Separarlas por 2 días te deja recuperar entre una y otra.'},
+  '2fz':{w:[['FBA'],['R'],['R'],['FBB'],['R'],['R'],['R']], y:'Dos sesiones full body distintas (A y B) para trabajar todos los patrones de movimiento en la semana. Camina los otros días para sumar actividad sin fatiga.'},
+  '2cd':{w:[['R'],['FB'],['R'],['R'],['R'],['Z2L'],['R']], y:'Aunque priorices el cardio, no sueltes la fuerza: protege tus articulaciones y te hace más eficiente. El sábado queda para la sesión larga, con tiempo y sin apuro.'},
+  '3eq':{w:[['FBA'],['R'],['Z2'],['R'],['FBB','INTC'],['R'],['R']], y:'Fuerza al inicio y al final de la semana, cardio suave al medio. Los intervalos cortos van pegados a la fuerza del viernes para tener dos días de recuperación después.'},
+  '3fz':{w:[['FBA'],['R'],['FBB'],['R'],['FBC'],['R'],['R']], y:'Tres full body con un día de descanso entre cada una: es una de las estructuras con mejor respaldo para ganar fuerza y músculo con poco tiempo.'},
+  '3cd':{w:[['FB'],['R'],['INT'],['R'],['R'],['Z2L'],['R']], y:'La fuerza del lunes queda a 48 horas de los intervalos del miércoles. El cardio largo y suave del sábado es tu sesión clave, por eso el viernes es libre.'},
+  '4eq':{w:[['FI'],['Z2'],['R'],['FS'],['R'],['INT'],['R']], y:'Piernas el lunes y los intervalos el sábado, bien separados. El tren superior del jueves no interfiere con correr ni pedalear.'},
+  '4fz':{w:[['FI'],['FS'],['R'],['FI'],['FS'],['R'],['R']], y:'Rutina dividida en superior e inferior: cada grupo muscular se entrena 2 veces por semana con 48 horas o más de recuperación.'},
+  '4cd':{w:[['INT'],['R'],['FB'],['R'],['Z2'],['R'],['Z2L']], y:'Calidad el lunes, fuerza a mitad de semana y la sesión larga el domingo. El cardio suave del viernes suma volumen sin cansarte para el fin de semana.'},
+  '5eq':{w:[['FI'],['Z2'],['FS'],['R'],['INT'],['Z2L'],['R']], y:'Esta es la lógica del entrenamiento híbrido: piernas lejos de los intervalos, tren superior cuando las piernas descansan y cardio suave para sumar volumen.'},
+  '5fz':{w:[['FI'],['FS'],['Z2'],['FI'],['FS'],['R'],['R']], y:'Superior e inferior dos veces cada uno, con un cardio suave al medio que ayuda a recuperar y cuida tu salud cardiovascular.'},
+  '5cd':{w:[['FB'],['Z2'],['INT'],['R'],['Z2'],['Z2L'],['R']], y:'Cuatro días de cardio, pero solo uno intenso: así sumas volumen sin lesionarte. La fuerza del lunes es tu seguro contra lesiones.'}
+};
+const REC = {
+  eq:{p:'HYBRID', d:'Fuerza y resistencia en un mismo plan, ordenado para que una no le quite a la otra. Si quieres bajar grasa, mira SHRED.'},
+  fz:{p:'WIN · EMPOWER', d:'Planes de fuerza y rendimiento. EMPOWER está pensado para mujeres. Si vienes de una lesión, mira PERFORMANCE.'},
+  cd:{p:'RUNNING', d:'Para correr mejor o preparar tu próxima carrera. ¿Vas por un HYROX? Mira HYROX Básico o HYROX Pro.'}
+};
+let state = {days:'3', focus:'eq'};
+
+function render(){
+  const tpl = T[state.days + state.focus];
+  document.getElementById('why').innerHTML = '<b>Por qué está ordenada así</b>' + tpl.y;
+  document.getElementById('week').innerHTML = tpl.w.map((ss,i)=>{
+    const rest = ss.length===1 && ss[0]==='R';
+    return '<div class="day'+(rest?' rest':'')+'"><div class="dname">'+DAYS[i]+'</div><div>'+
+      ss.map(k=>{const s=S[k];return '<div class="s"><span class="tag '+s.t+'">'+s.t+'</span><div class="stitle">'+s.n+'</div><div class="sdetail">'+s.d+'</div></div>';}).join('')+
+      '</div></div>';
+  }).join('');
+  const r = REC[state.focus];
+  document.getElementById('rec').innerHTML = '<span style="margin:0 0 2px">Programa recomendado para ti</span><b>'+r.p+'</b><span>'+r.d+'</span>';
+}
+function bind(id,key){
+  document.querySelectorAll('#'+id+' button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('#'+id+' button').forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      state[key]=b.dataset.v; render();
+    });
+  });
+}
+bind('days','days'); bind('focus','focus'); render();
+</script>
+</body>
+</html>
