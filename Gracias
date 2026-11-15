@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Bienvenido a FORTE Programs!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Barlow:wght@300;400;500;600&display=swap');
+
+  :root {
+    --stone: #F4F1EC;
+    --graphite: #2C2D35;
+    --amber: #B8960A;
+    --amber-light: #D4AD0E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--graphite);
+    color: var(--stone);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    text-align: center;
+  }
+
+  /* Animated checkmark */
+  .check-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(184,150,10,0.12);
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes popIn {
+    from { transform: scale(0.4); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+  .check-wrap svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--amber);
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: drawCheck 0.5s 0.4s ease forwards;
+  }
+  @keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Logo */
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.1s ease forwards;
+  }
+
+  /* Main card */
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,10,0.22);
+    border-radius: 20px;
+    padding: 36px 28px;
+    max-width: 420px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeUp 0.5s 0.3s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .title span { color: var(--amber); }
+
+  .subtitle {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(244,241,236,0.6);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--amber);
+    border-radius: 2px;
+    margin: 0 auto 24px;
+    opacity: 0.5;
+  }
+
+  .message {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(244,241,236,0.85);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .message strong {
+    color: var(--stone);
+    font-weight: 600;
+  }
+
+  /* WA button */
+  .wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.1s;
+    margin-bottom: 16px;
+  }
+  .wa-btn:hover { background: #1ebe5d; transform: translateY(-1px); }
+  .wa-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.82rem;
+    color: rgba(244,241,236,0.4);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: rgba(244,241,236,0.75); }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+    text-align: left;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(184,150,10,0.15);
+    border: 1px solid rgba(184,150,10,0.35);
+    color: var(--amber);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-text {
+    font-size: 0.88rem;
+    color: rgba(244,241,236,0.75);
+    line-height: 1.5;
+  }
+  .step-text strong { color: var(--stone); font-weight: 600; }
+
+  .footer-note {
+    margin-top: 40px;
+    font-size: 0.75rem;
+    color: rgba(244,241,236,0.25);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+  <p class="logo">FORTE Programs</p>
+
+  <div class="check-wrap">
+    <svg viewBox="0 0 24 24">
+      <polyline points="4 12 9 17 20 7"/>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h1 class="title">¡Felicitaciones,<br><span>bienvenido al programa!</span></h1>
+    <p class="subtitle">Tu pago fue procesado correctamente.</p>
+
+    <div class="divider"></div>
+
+    <p class="message">
+      A la brevedad nos pondremos en contacto contigo a través de <strong>WhatsApp</strong> para contarte los pasos a seguir y darte acceso a tu programa.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p class="step-text"><strong>Revisa tu WhatsApp</strong> — te escribiremos desde el número de FORTE Programs en las próximas horas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p class="step-text"><strong>Acceso a la app</strong> — recibirás el link de inscripción a tu plataforma de entrenamiento.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p class="step-text"><strong>Kick-off</strong> — tu coach te guiará en el setup inicial y resolverá todas tus dudas.</p>
+      </div>
+    </div>
+
+    <a class="wa-btn" href="https://wa.me/56956445332?text=Hola%2C%20acabo%20de%20pagar%20mi%20programa%20FORTE%20Programs%20%F0%9F%92%AA%20%C2%BFCu%C3%A1les%20son%20los%20pasos%20a%20seguir%3F" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      Escribir a FORTE Programs
+    </a>
+
+    <a class="back-link" href="/">← Volver al inicio</a>
+  </div>
+
+  <p class="footer-note">#BEHAPPYSTAYFORTE · forteprograms.cl</p>
+
+</body>
+</html>
