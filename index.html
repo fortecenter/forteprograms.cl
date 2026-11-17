@@ -1488,6 +1488,395 @@
     display: block;
   }
 
+
+  /* ══════════════════════════════════════
+     PARA QUIÉN ES ESTO
+  ══════════════════════════════════════ */
+  .forquien-section {
+    padding: 72px 20px;
+    background: rgba(184,150,10,0.03);
+    border-top: 1px solid rgba(184,150,10,0.1);
+    border-bottom: 1px solid rgba(184,150,10,0.1);
+  }
+  .forquien-inner { max-width: 900px; margin: 0 auto; }
+  .forquien-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  @media(min-width:600px) { .forquien-grid { grid-template-columns: 1fr 1fr; } }
+  .fq-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,150,10,0.16);
+    border-radius: 16px;
+    padding: 22px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .fq-card:hover {
+    border-color: rgba(184,150,10,0.38);
+    background: rgba(184,150,10,0.055);
+    transform: translateY(-2px);
+  }
+  .fq-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(184,150,10,0.1);
+    border: 1px solid rgba(184,150,10,0.28);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .fq-icon svg { width: 20px; height: 20px; stroke: var(--amber); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fq-body { flex: 1; }
+  .fq-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--stone); margin-bottom: 6px;
+  }
+  .fq-desc {
+    font-size: 0.84rem;
+    color: rgba(244,241,236,0.58);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .fq-pill {
+    display: inline-block;
+    background: rgba(184,150,10,0.12);
+    border: 1px solid rgba(184,150,10,0.3);
+    color: var(--amber);
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 20px;
+  }
+
+  /* ══════════════════════════════════════
+     CÓMO FUNCIONA
+  ══════════════════════════════════════ */
+  .como-section { padding: 72px 20px; }
+  .como-inner { max-width: 900px; margin: 0 auto; }
+  .como-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 32px;
+    position: relative;
+  }
+  @media(min-width:600px) {
+    .como-steps {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+  }
+  .como-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 24px;
+    position: relative;
+  }
+  .como-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    background: rgba(184,150,10,0.25);
+  }
+  @media(max-width:599px) {
+    .como-step:not(:last-child)::after {
+      bottom: 0; left: 50%; width: 1px; height: 28px;
+      transform: translateX(-50%);
+    }
+  }
+  @media(min-width:600px) {
+    .como-step:not(:last-child)::after {
+      top: 36px; right: -1px; width: 1px; height: 40px;
+    }
+  }
+  .como-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(184,150,10,0.1);
+    border: 1px solid rgba(184,150,10,0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--amber); margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  .como-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--stone); margin-bottom: 8px;
+  }
+  .como-desc {
+    font-size: 0.84rem;
+    color: rgba(244,241,236,0.55);
+    line-height: 1.6; max-width: 220px;
+  }
+
+  /* ══════════════════════════════════════
+     COMPARADOR DE PROGRAMAS
+  ══════════════════════════════════════ */
+  .comparador-section { padding: 72px 20px; background: rgba(255,255,255,0.015); border-top: 1px solid rgba(184,150,10,0.08); }
+  .comparador-inner { max-width: 900px; margin: 0 auto; }
+  .comparador-subtitle {
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(244,241,236,0.5);
+    margin-top: -16px; margin-bottom: 32px;
+  }
+  .comp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comp-table {
+    width: 100%; min-width: 540px;
+    border-collapse: collapse;
+  }
+  .comp-table th {
+    padding: 10px 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(244,241,236,0.4);
+    border-bottom: 1px solid rgba(184,150,10,0.15);
+    text-align: left;
+  }
+  .comp-table th:first-child { width: 28%; }
+  .comp-table td {
+    padding: 13px 14px;
+    font-size: 0.84rem;
+    color: rgba(244,241,236,0.72);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td { background: rgba(184,150,10,0.04); }
+  .comp-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--stone);
+  }
+  .comp-check { color: var(--amber); font-size: 1rem; }
+  .comp-dash { color: rgba(244,241,236,0.2); }
+  .comp-price-cell {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--amber);
+  }
+  .comp-badge {
+    display: inline-block;
+    background: rgba(184,150,10,0.12);
+    border: 1px solid rgba(184,150,10,0.28);
+    color: var(--amber);
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 20px;
+    margin-left: 6px; vertical-align: middle;
+  }
+
+  /* ══════════════════════════════════════
+     TESTIMONIOS MEJORADOS
+  ══════════════════════════════════════ */
+  .testi-new-section { padding: 72px 20px; }
+  .testi-new-inner { max-width: 900px; margin: 0 auto; }
+  .testi-featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  @media(min-width:600px) { .testi-featured { grid-template-columns: 1fr 1fr; } }
+  .testi-card-new {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,150,10,0.16);
+    border-radius: 16px;
+    padding: 22px 20px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .testi-card-new:hover { transform: translateY(-2px); border-color: rgba(184,150,10,0.3); }
+  .testi-stars { color: var(--amber); font-size: 0.9rem; letter-spacing: 2px; }
+  .testi-quote-new {
+    font-size: 0.9rem;
+    color: rgba(244,241,236,0.72);
+    line-height: 1.65;
+    flex: 1;
+  }
+  .testi-quote-new::before { content: '"'; color: var(--amber); font-size: 1.3rem; line-height: 0; vertical-align: -4px; margin-right: 2px; }
+  .testi-quote-new::after { content: '"'; color: var(--amber); font-size: 1.3rem; line-height: 0; vertical-align: -4px; margin-left: 2px; }
+  .testi-author-new { display: flex; align-items: center; gap: 10px; }
+  .testi-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(184,150,10,0.15);
+    border: 1px solid rgba(184,150,10,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 700; color: var(--amber);
+    flex-shrink: 0;
+  }
+  .testi-author-info { flex: 1; }
+  .testi-author-name-new {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--stone);
+  }
+  .testi-program-badge {
+    display: inline-block;
+    background: rgba(184,150,10,0.1);
+    border: 1px solid rgba(184,150,10,0.25);
+    color: var(--amber);
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 20px; margin-top: 2px;
+  }
+
+  /* ══════════════════════════════════════
+     FAQ MEJORADO
+  ══════════════════════════════════════ */
+  .faq-new-section { padding: 72px 20px; background: rgba(184,150,10,0.025); border-top: 1px solid rgba(184,150,10,0.08); }
+  .faq-new-inner { max-width: 680px; margin: 0 auto; }
+  .faq-new-list { margin-top: 32px; display: flex; flex-direction: column; gap: 10px; }
+  .faq-new-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,150,10,0.16);
+    border-radius: 12px; overflow: hidden;
+  }
+  .faq-new-q {
+    width: 100%; background: none; border: none; color: var(--stone);
+    font-family: 'Barlow', sans-serif; font-size: 0.9rem; font-weight: 600;
+    text-align: left; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .faq-new-q:hover { color: var(--amber); }
+  .faq-new-q.open { color: var(--amber); }
+  .faq-icon-btn {
+    width: 24px; height: 24px; flex-shrink: 0;
+    border-radius: 50%; background: rgba(184,150,10,0.1);
+    border: 1px solid rgba(184,150,10,0.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s, background 0.2s;
+  }
+  .faq-new-q.open .faq-icon-btn { transform: rotate(45deg); background: rgba(184,150,10,0.2); }
+  .faq-icon-btn svg { width: 12px; height: 12px; stroke: var(--amber); fill: none; stroke-width: 2.5; stroke-linecap: round; }
+  .faq-new-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    padding: 0 20px;
+    font-size: 0.86rem; color: rgba(244,241,236,0.6); line-height: 1.7;
+  }
+  .faq-new-a.open { max-height: 300px; padding: 0 20px 18px; }
+
+  /* ══════════════════════════════════════
+     MOBILE CTA BAR
+  ══════════════════════════════════════ */
+  .mobile-cta-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
+    background: rgba(44,45,53,0.97);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(184,150,10,0.2);
+    padding: 12px 16px;
+    align-items: center; justify-content: space-between; gap: 10px;
+  }
+  @media(max-width:640px) { .mobile-cta-bar { display: flex; } }
+  .mobile-cta-left { display: flex; flex-direction: column; }
+  .mobile-cta-label {
+    font-size: 0.68rem; color: rgba(244,241,236,0.4);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .mobile-cta-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--stone);
+  }
+  .mobile-cta-btn {
+    background: var(--amber); color: var(--graphite);
+    text-decoration: none; padding: 12px 22px; border-radius: 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+
+  /* ══════════ ENCUENTRA TU PROGRAMA (tabs) ══════════ */
+  .encuentra-section {
+    padding: 72px 20px;
+    background: rgba(184,150,10,0.03);
+    border-top: 1px solid rgba(184,150,10,0.1);
+    border-bottom: 1px solid rgba(184,150,10,0.1);
+  }
+  .encuentra-inner { max-width: 900px; margin: 0 auto; }
+  .tab-row {
+    display: flex; justify-content: center; gap: 8px;
+    margin: 24px 0 0;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,10,0.22);
+    color: rgba(244,241,236,0.55);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 10px 22px; border-radius: 30px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .tab-btn:hover { color: var(--amber); border-color: rgba(184,150,10,0.45); }
+  .tab-btn.active {
+    background: rgba(184,150,10,0.12);
+    border-color: var(--amber);
+    color: var(--amber);
+  }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+
+  /* ══════════ TESTIMONIOS CAROUSEL ══════════ */
+  .testi-new-section { padding: 72px 20px; overflow: hidden; }
+  .testi-new-inner { max-width: 960px; margin: 0 auto; }
+  .testi-track-wrap {
+    position: relative; margin-top: 32px;
+    overflow: hidden;
+  }
+  .testi-track {
+    display: flex; gap: 16px;
+    transition: transform 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    will-change: transform;
+  }
+  .testi-card-new {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,150,10,0.16);
+    border-radius: 16px;
+    padding: 22px 20px;
+    display: flex; flex-direction: column; gap: 12px;
+    min-width: 280px; width: 280px; flex-shrink: 0;
+  }
+  @media(min-width:600px){ .testi-card-new { min-width: 300px; width: 300px; } }
+  .testi-card-new:hover { border-color: rgba(184,150,10,0.3); }
+  .testi-nav {
+    display: flex; justify-content: center; align-items: center; gap: 16px;
+    margin-top: 24px;
+  }
+  .testi-arrow {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,10,0.25);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .testi-arrow:hover { background: rgba(184,150,10,0.12); border-color: rgba(184,150,10,0.5); }
+  .testi-arrow svg { width: 14px; height: 14px; stroke: var(--amber); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .testi-dots { display: flex; gap: 6px; }
+  .testi-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(184,150,10,0.25);
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .testi-dot.active { background: var(--amber); transform: scale(1.3); }
+
 </style>
 </head>
 <body id="top">
@@ -1559,9 +1948,100 @@
   </div>
 </div>
 
+<!-- PARA QUIÉN ES ESTO -->
 
+<!-- ENCUENTRA TU PROGRAMA (tabbed) -->
+<section class="encuentra-section" id="para-quien">
+  <div class="encuentra-inner">
+    <p class="section-label" style="text-align:center">Encuentra tu programa</p>
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab(this,'tab-perfil')">¿Para quién es esto?</button>
+      <button class="tab-btn" onclick="switchTab(this,'tab-comparador')">Comparador de programas</button>
+    </div>
 
-<!-- QUIZ CTA -->
+    <!-- TAB 1: Para quién -->
+    <div class="tab-pane active" id="tab-perfil">
+      <div class="forquien-grid" style="margin-top:24px">
+
+        <div class="fq-card reveal rd1">
+          <div class="fq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.5"/><path d="m9 11 2-2 2 1 3-3"/><path d="M7 20 9 15l3 2 2-5"/></svg>
+          </div>
+          <div class="fq-body">
+            <div class="fq-title">El corredor que quiere más</div>
+            <div class="fq-desc">Corres hace un tiempo, pero sientes que llegas siempre al mismo punto. Quieres mejorar tus tiempos con un plan real y no seguir improvisando.</div>
+            <span class="fq-pill">Running · Hybrid</span>
+          </div>
+        </div>
+
+        <div class="fq-card reveal rd2">
+          <div class="fq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 17v0a2.5 2.5 0 0 0 2.5-2.5v-1.5a4 4 0 1 0-5 0v1.5z"/><path d="M12 22v-5"/></svg>
+          </div>
+          <div class="fq-body">
+            <div class="fq-title">El que va a su primera HYROX</div>
+            <div class="fq-desc">Tienes base de entrenamiento y quieres competir en HYROX, pero no sabes por dónde empezar ni cómo periodizar fuerza y cardio al mismo tiempo.</div>
+            <span class="fq-pill">HYROX · Hybrid</span>
+          </div>
+        </div>
+
+        <div class="fq-card reveal rd3">
+          <div class="fq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="fq-body">
+            <div class="fq-title">La mujer que quiere entrenar con estructura</div>
+            <div class="fq-desc">Tienes ganas de moverte, sentirte fuerte y consistente, pero los planes genéricos no se adaptan a tu vida ni a tu cuerpo.</div>
+            <span class="fq-pill">EMPOWER · WIN</span>
+          </div>
+        </div>
+
+        <div class="fq-card reveal rd4">
+          <div class="fq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="fq-body">
+            <div class="fq-title">El atleta que quiere llegar al tope</div>
+            <div class="fq-desc">Ya tienes experiencia, entrenas fuerte, pero necesitas un proceso periodizado al detalle para llegar a tu mejor versión en competencia.</div>
+            <span class="fq-pill">HYROX Pro · Performance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: Comparador -->
+    <div class="tab-pane" id="tab-comparador">
+      <p style="text-align:center;font-size:0.86rem;color:rgba(244,241,236,0.45);margin:16px 0 24px;">Compara los programas y elige el que encaja con tu objetivo</p>
+      <div class="comp-table-wrap reveal">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Programa</th>
+              <th>Objetivo</th>
+              <th>Nivel</th>
+              <th>Plataforma</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="comp-name">Running</span></td><td>Mejorar tiempos en carrera</td><td>Todos</td><td>TrainingPeaks</td><td class="comp-price-cell">$25.000</td></tr>
+            <tr><td><span class="comp-name">Hybrid</span></td><td>Fuerza + resistencia en paralelo</td><td>Intermedio</td><td>TB + TP</td><td class="comp-price-cell">$50.000</td></tr>
+            <tr><td><span class="comp-name">HYROX</span></td><td>Primera competencia HYROX</td><td>Intermedio</td><td>TB + TP</td><td class="comp-price-cell">$50.000</td></tr>
+            <tr><td><span class="comp-name">HYROX Pro</span><span class="comp-badge">Elite</span></td><td>Rendir al máximo en HYROX</td><td>Avanzado</td><td>TB + TP</td><td class="comp-price-cell">$50.000</td></tr>
+            <tr><td><span class="comp-name">WIN</span></td><td>Fuerza y composición corporal</td><td>Todos</td><td>Teambuildr</td><td class="comp-price-cell">$50.000</td></tr>
+            <tr><td><span class="comp-name">EMPOWER</span></td><td>Entrenamiento femenino con estructura</td><td>Todos</td><td>Teambuildr</td><td class="comp-price-cell">$50.000</td></tr>
+            <tr><td><span class="comp-name">Performance</span></td><td>Alto rendimiento y periodización</td><td>Avanzado</td><td>Teambuildr</td><td class="comp-price-cell">$50.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUIZ CTA REPOSITIONED -->
+<div style="padding: 0 20px 8px; max-width:900px; margin:0 auto;">
 <div style="padding: 24px 0 8px;">
   <a href="forte-quiz.html" class="quiz-cta">
     <div class="quiz-cta-icon">🎯</div>
@@ -1573,38 +2053,46 @@
   </a>
 
 </div>
+</div>
 
-<!-- HOW IT WORKS -->
-<section class="steps-section">
-  <p class="section-label">Cómo funciona</p>
-  <div class="steps-grid">
 
-    <div class="step">
-      <div class="step-number">1</div>
-      <div class="step-body">
-        <div class="step-title">Elige tu programa</div>
-        <div class="step-desc">Selecciona el plan que mejor se adapta a tus objetivos y disciplina.</div>
+
+
+<!-- CÓMO FUNCIONA -->
+<section class="como-section" id="como-funciona">
+  <div class="como-inner">
+    <p class="section-label" style="text-align:center">¿Cómo funciona?</p>
+    <div class="como-steps">
+
+      <div class="como-step reveal rd1">
+        <div class="como-num">1</div>
+        <div class="como-title">Elige tu programa</div>
+        <div class="como-desc">Selecciona el programa que se ajuste a tu objetivo y nivel, luego realiza el pago. Si tienes dudas, usa el quiz o escríbenos y te orientamos.</div>
       </div>
-    </div>
 
-    <div class="step">
-      <div class="step-number">2</div>
-      <div class="step-body">
-        <div class="step-title">Cuestionario inicial</div>
-        <div class="step-desc">Completas una evaluación personalizada: historial, objetivos, disponibilidad, lesiones y dónde entrenas. Así conocemos tu punto de partida real.</div>
+      <div class="como-step reveal rd2">
+        <div class="como-num">2</div>
+        <div class="como-title">Completa tu cuestionario</div>
+        <div class="como-desc">Recibes un cuestionario donde nos cuentas tu historial, disponibilidad y metas. Con eso construimos un plan 100% a tu medida.</div>
       </div>
-    </div>
 
-    <div class="step">
-      <div class="step-number">3</div>
-      <div class="step-body">
-        <div class="step-title">Recibes tu plan</div>
-        <div class="step-desc">Tu programa llega a la app en menos de 48 horas, diseñado para ti. Seguimiento continuo y ajustes quincenales.</div>
+      <div class="como-step reveal rd3">
+        <div class="como-num">3</div>
+        <div class="como-title">Recibe tu plan y entrena</div>
+        <div class="como-desc">Tu plan llega cargado en la plataforma el mismo día. Entrenas, registras tus sesiones y nos retroalimentas semana a semana — así el coach ajusta cargas, resuelve dudas y el proceso mejora contigo.</div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
+
+
+
+
+
+
+<!-- HOW IT WORKS -->
+
 
 <!-- PROGRAMS -->
 <section class="programs" id="programs">
@@ -1991,6 +2479,10 @@
 
 </section>
 
+<!-- COMPARADOR DE PROGRAMAS -->
+
+
+
 <!-- INFO BANNERS -->
 <section style="padding: 8px 16px 20px;">
   <div class="adapt-banner" style="margin: 0;">
@@ -2028,178 +2520,209 @@
 
 
 <!-- TESTIMONIALS -->
-<section class="testimonials-section" id="testimonials">
-  <p class="section-label">Lo que dicen los atletas</p>
-  <p class="scroll-hint">← Desliza para ver más</p>
-  <div class="testimonials-track">
-    <div class="testimonial-card">
-      <div class="testimonial-program">Running</div>
-      <div class="testimonial-quote">Al fin siento la confianza de un coach que entiende mis metas. Cero planes genéricos, todo 100% personalizado.</div>
-      <div class="testimonial-name">Francisca</div>
+
+<!-- TESTIMONIOS REDISEÑADOS -->
+
+<!-- TESTIMONIOS CAROUSEL -->
+<section class="testi-new-section" id="testimonials">
+  <div class="testi-new-inner">
+    <p class="section-label" style="text-align:center">Lo que dicen los atletas</p>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">No quería sacrificar la fuerza por el running. Con Forte Programs no tuve que elegir — avancé en los dos.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">L</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Luciana</div>
+              <span class="testi-program-badge">Hybrid</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">Hay muchos coaches online que dicen dar servicio personalizado, pero solo son planes genéricos. Pablo se nota que sabe y los resultados lo comprueban.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">J</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Javier</div>
+              <span class="testi-program-badge">Running</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">Aprendí que descansar también es parte del progreso. Mejoré en cardio y llegué con más energía a cada entrenamiento.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">G</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Guillermo Covarrubias</div>
+              <span class="testi-program-badge">HYROX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">He logrado cosas que nunca pensé que podría hacer. Mi running mejoró muchísimo y mi cuerpo no se siente agotado.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">D</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Daniela</div>
+              <span class="testi-program-badge">HYROX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">No solo entrenamiento, también alimentación, mentalidad y un follow up genuino y personalizado.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">V</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Vicente Fleishmann</div>
+              <span class="testi-program-badge">Performance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">Cumplí cada una de las metas que nos propusimos, mejorando mis tiempos en cada carrera planificada.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">M</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Marcelo Román</div>
+              <span class="testi-program-badge">Running</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">Al fin siento la confianza de un coach que entiende mis metas. Cero planes genéricos, todo 100% personalizado.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">F</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Francisca</div>
+              <span class="testi-program-badge">Running</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card-new">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote-new">He avanzado en fuerza y en running al mismo tiempo, puedo cargar más peso, ser más rápido y estoy feliz con eso.</p>
+          <div class="testi-author-new">
+            <div class="testi-avatar">L</div>
+            <div class="testi-author-info">
+              <div class="testi-author-name-new">Lorenzh</div>
+              <span class="testi-program-badge">Hybrid</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">La personalización marcó la diferencia. Llevo poco tiempo y ya me siento con mucho menos dolores.</div>
-      <div class="testimonial-name">Cristian</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Hybrid</div>
-      <div class="testimonial-quote">No quería sacrificar la fuerza por el running. Con Forte Programs no tuve que elegir — avancé en los dos.</div>
-      <div class="testimonial-name">Luciana</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Performance</div>
-      <div class="testimonial-quote">No solo entrenamiento, también alimentación, mentalidad y un follow up genuino y personalizado.</div>
-      <div class="testimonial-name">Vicente Fleishmann</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Running</div>
-      <div class="testimonial-quote">Hay muchos coaches online que dicen dar servicio personalizado, pero solo son planes genéricos. Pablo se nota que sabe y los resultados lo comprueban.</div>
-      <div class="testimonial-name">Javier</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">Aprendí que descansar también es parte del progreso. Mejoré en cardio y llegué con más energía a cada entrenamiento.</div>
-      <div class="testimonial-name">Guillermo Covarrubias</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Hybrid</div>
-      <div class="testimonial-quote">He avanzado en fuerza y en running al mismo tiempo, puedo cargar más peso, ser más rápido y estoy feliz con eso.</div>
-      <div class="testimonial-name">Lorenzh</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Running</div>
-      <div class="testimonial-quote">Cumplí cada una de las metas que nos propusimos, mejorando mis tiempos en cada carrera planificada.</div>
-      <div class="testimonial-name">Marcelo Román</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">En pocas semanas noté una gran mejora en mi rendimiento. El camino a seguir siempre está claro.</div>
-      <div class="testimonial-name">Maximiliano</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Hybrid</div>
-      <div class="testimonial-quote">Aprendí a ser paciente y constante. Mejoras físicas y sobre todo en mi estado de ánimo.</div>
-      <div class="testimonial-name">Martín</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Running</div>
-      <div class="testimonial-quote">La cercanía, preocupación y seguimiento superó completamente mis expectativas.</div>
-      <div class="testimonial-name">María Jesús García</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">Me cambió la manera de entrenar. No solo entrena tu físico, te lleva a superar tus límites.</div>
-      <div class="testimonial-name">Walter</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Hybrid</div>
-      <div class="testimonial-quote">La personalización del programa y la disposición para ajustar. Ya he notado mejoras en la calidad de mis entrenamientos.</div>
-      <div class="testimonial-name">Renzo</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">Running</div>
-      <div class="testimonial-quote">Comenzamos de cero y ya hemos podido tener pequeños cambios y buenos resultados.</div>
-      <div class="testimonial-name">Belén</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">Seguimiento constante, excelente comunicación y se adapta a tus condiciones y objetivos.</div>
-      <div class="testimonial-name">Ariel</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-program">HYROX</div>
-      <div class="testimonial-quote">He logrado cosas que nunca pensé que podría hacer. Mi running mejoró muchísimo y mi cuerpo no se siente agotado.</div>
-      <div class="testimonial-name">Daniela</div>
+    <div class="testi-nav">
+      <button class="testi-arrow" onclick="testiMove(-1)"><svg viewBox="0 0 14 14"><polyline points="9 2 4 7 9 12"/></svg></button>
+      <div class="testi-dots" id="testiDots"></div>
+      <button class="testi-arrow" onclick="testiMove(1)"><svg viewBox="0 0 14 14"><polyline points="5 2 10 7 5 12"/></svg></button>
     </div>
   </div>
 </section>
+
+
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
-  <p class="section-label">Preguntas frecuentes</p>
 
-  <div class="faq-item reveal rd1" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Qué es el cuestionario inicial?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Es una evaluación que completas antes de recibir tu plan. Incluye tu historial deportivo, objetivos, disponibilidad horaria, lesiones previas, lugar de entrenamiento y equipamiento. Con eso el coach construye tu programa desde cero, adaptado 100% a ti.</p>
+<!-- FAQ MEJORADO -->
+<section class="faq-new-section" id="faq">
+  <div class="faq-new-inner">
+    <p class="section-label" style="text-align:center">Preguntas frecuentes</p>
+    <div class="faq-new-list">
+
+      
+      <div class="faq-new-item reveal rd1">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo hacer el programa si soy principiante?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. Programas como Running, WIN y EMPOWER están diseñados para todos los niveles, desde cero. Lo importante es tu disposición y consistencia — el plan se adapta a donde estás hoy.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd2">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cómo accedo al programa una vez inscrito?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Una vez confirmado el pago, recibes el acceso a Teambuildr o TrainingPeaks según el programa. Todo tu plan ya estará cargado y listo para entrenar desde cualquier dispositivo, el mismo día.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd3">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿El programa incluye alimentación?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Los programas se enfocan en el entrenamiento. Sin embargo, se entregan pautas generales de nutrición deportiva para complementar tu proceso. Si necesitas un plan nutricional personalizado, te orientamos hacia el especialista adecuado.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd1">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Necesito equipo especial para entrenar?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Depende del programa. Running solo necesitas zapatillas. Para HYROX y Hybrid se necesita acceso a gimnasio con barras, pesas y ski-erg o rower. Si tienes dudas sobre tu equipamiento, escríbenos antes de inscribirte.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd2">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Qué pasa si viajo o me enfermo?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Los programas se ajustan a tu realidad. Si viajas o no puedes entrenar, avisas por WhatsApp y Pablo adapta el plan. No pierdes días ni semanas — el proceso se moldea a ti.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd3">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo cambiar de programa después?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. Muchos atletas empiezan en Running o Hybrid y avanzan hacia HYROX o Performance a medida que progresan. Puedes cambiar de programa al inicio de cualquier nuevo mes.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd4">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cuántas veces a la semana entreno?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Varía por programa y nivel, pero en general entre 3 y 5 sesiones semanales. El plan se estructura respetando tus tiempos de recuperación para que rindas sin lesionarte.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd5">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cómo es el seguimiento?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Pablo revisa tu progreso semanalmente en la plataforma, ajusta cargas y responde por WhatsApp. No es un plan que se sube y se olvida — hay una comunicación real y continua durante todo el proceso.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd6">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo pagar mensual y cancelar cuando quiera?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. El pago es mensual y no hay contratos. Puedes continuar o pausar mes a mes según tus metas y disponibilidad.</div>
+      </div>
+
     </div>
   </div>
-
-  <div class="faq-item reveal rd2" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Necesito ir al gym?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">No necesariamente. Todos los programas se adaptan a tu lugar de entrenamiento — gym, casa, parque o donde entrenes. En el cuestionario inicial nos indicas qué equipamiento tienes disponible y armamos el plan en base a eso.</p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal rd3" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Cuándo recibo mi plan?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Una vez que completas el cuestionario inicial, recibes tu plan personalizado en la app listo para el próximo lunes.</p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal rd4" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Puedo cambiar de programa?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Sí. Si tus objetivos cambian o quieres evolucionar a otro programa, lo conversamos y hacemos la transición. El coaching se adapta a tu momento, no al revés.</p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal rd1" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Cómo es el seguimiento?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Seguimiento continuo vía WhatsApp, ajustes quincenales del plan y comunicación directa con el coach. No desapareces después del primer pago.</p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal rd2" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Desde dónde puedo entrenar?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Desde cualquier lugar del mundo. Los programas son 100% online y se entregan a través de las apps Teambuildr y/o TrainingPeaks, accesibles desde tu celular.</p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal rd3" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Es una asesoría personalizada o un plan genérico?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Es 100% personalizada. Cada atleta tiene atención directa 1:1 con su coach. No eres un número — hay un coach detrás de cada plan que te conoce, te sigue de cerca y ajusta según cómo vas respondiendo.</p>
-    </div>
-  </div>
-
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-question">
-      <span class="faq-q-text">¿Se adapta a mi equipamiento?</span>
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
-    <div class="faq-answer">
-      <p class="faq-answer-text">Sí. Todos los programas se adaptan a tu lugar de entrenamiento y al equipamiento que tienes disponible — gym completo, casa, parque o lo que sea. Lo indicas en el cuestionario inicial y el plan se construye en base a eso.</p>
-    </div>
-  </div>
-
 </section>
+
 
 <!-- SOCIAL -->
 <section class="social-section">
@@ -2380,5 +2903,128 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 </script>
+
+<!-- MOBILE CTA BAR -->
+<div class="mobile-cta-bar" id="mobile-cta">
+  <div class="mobile-cta-left">
+    <div class="mobile-cta-label">Desde</div>
+    <div class="mobile-cta-price">$25.000 / mes</div>
+  </div>
+  <a class="mobile-cta-btn" href="#programs">Ver Programas</a>
+</div>
+
+
+<script>
+function toggleFaqNew(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-new-a');
+  const isOpen = btn.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-new-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.parentElement.querySelector('.faq-new-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// Hide mobile CTA when in programs section
+const mobileCta = document.getElementById('mobile-cta');
+if (mobileCta) {
+  window.addEventListener('scroll', () => {
+    const prog = document.getElementById('programs');
+    if (prog) {
+      const r = prog.getBoundingClientRect();
+      mobileCta.style.transform = (r.top < 100 && r.bottom > 100) ? 'translateY(100%)' : '';
+    }
+  }, { passive: true });
+}
+</script>
+
+
+<script>
+// TABS
+function switchTab(btn, tabId) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+// TESTIMONIAL CAROUSEL
+(function() {
+  const track = document.getElementById('testiTrack');
+  const dotsWrap = document.getElementById('testiDots');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.testi-card-new');
+  let current = 0;
+  const total = cards.length;
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goTo(i);
+    dotsWrap.appendChild(dot);
+  });
+
+  function getVisible() { return window.innerWidth >= 600 ? 3 : 1; }
+  function getCardWidth() { return cards[0].offsetWidth + 16; }
+
+  function goTo(idx) {
+    const max = total - getVisible();
+    current = Math.max(0, Math.min(idx, max));
+    track.style.transform = 'translateX(-' + (current * getCardWidth()) + 'px)';
+    dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  window.testiMove = function(dir) { goTo(current + dir); };
+
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) testiMove(diff > 0 ? 1 : -1);
+  });
+
+  // Mouse drag
+  let isDragging = false, dragStartX = 0, dragDelta = 0;
+  track.style.cursor = 'grab';
+
+  track.addEventListener('mousedown', e => {
+    isDragging = true;
+    dragStartX = e.clientX;
+    dragDelta = 0;
+    track.style.cursor = 'grabbing';
+    track.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    dragDelta = dragStartX - e.clientX;
+    const base = current * getCardWidth();
+    track.style.transform = 'translateX(-' + (base + dragDelta) + 'px)';
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.cursor = 'grab';
+    track.style.transition = '';
+    if (Math.abs(dragDelta) > 60) testiMove(dragDelta > 0 ? 1 : -1);
+    else goTo(current);
+  });
+
+  window.addEventListener('resize', () => goTo(current));
+})();
+</script>
+
 </body>
 </html>
