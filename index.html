@@ -1877,6 +1877,175 @@
   }
   .testi-dot.active { background: var(--amber); transform: scale(1.3); }
 
+
+  /* ── RECURSOS DIGITALES ── */
+  .recursos-section {
+    padding: 80px 20px;
+    background: rgba(184,150,10,0.04);
+    border-top: 1px solid rgba(184,150,10,0.10);
+  }
+  .recursos-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .recursos-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--stone);
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .recursos-subtitle {
+    font-size: 15px;
+    color: rgba(244,241,236,0.55);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+  .recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .recurso-card {
+    background: rgba(244,241,236,0.03);
+    border: 1px solid rgba(184,150,10,0.18);
+    border-radius: 16px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .recurso-card:hover {
+    border-color: rgba(184,150,10,0.45);
+    transform: translateY(-3px);
+  }
+  .recurso-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(184,150,10,0.12);
+    border: 1px solid rgba(184,150,10,0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .recurso-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--stone);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .recurso-tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(244,241,236,0.65);
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+  .recurso-desc {
+    font-size: 14px;
+    color: rgba(244,241,236,0.5);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .recurso-divider {
+    height: 1px;
+    background: rgba(184,150,10,0.12);
+    margin-bottom: 20px;
+  }
+  .recurso-includes {
+    list-style: none;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .recurso-includes li {
+    font-size: 13px;
+    color: rgba(244,241,236,0.6);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .recurso-includes li::before {
+    content: '→';
+    color: var(--amber);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .recurso-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .recurso-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--stone);
+    letter-spacing: 0.02em;
+  }
+  .recurso-price-note {
+    font-size: 11px;
+    color: rgba(244,241,236,0.35);
+    text-align: right;
+    line-height: 1.4;
+  }
+  .recurso-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    background: var(--amber);
+    color: var(--graphite);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .recurso-btn:hover {
+    background: var(--amber-light);
+    transform: scale(1.02);
+  }
+  @media (max-width: 640px) {
+    .recursos-grid { grid-template-columns: 1fr; }
+    .recurso-card { padding: 24px 20px; }
+  }
+
 </style>
 </head>
 <body id="top">
@@ -1885,8 +2054,9 @@
   <a class="sticky-nav-logo" href="#top">FORTE Programs</a>
   <ul class="sticky-nav-links">
     <li><a href="#programs">Programas</a></li>
-    <li><a href="#coach">Tu Coach</a></li>
+    <li><a href="#recursos">Recursos</a></li>
     <li><a href="#testimonials">Testimonios</a></li>
+    <li><a href="#coach">Tu Coach</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a class="sticky-nav-cta" href="#programs">Ver Programas</a>
@@ -2524,6 +2694,56 @@
 <!-- TESTIMONIOS REDISEÑADOS -->
 
 <!-- TESTIMONIOS CAROUSEL -->
+<section class="recursos-section reveal" id="recursos">
+  <div class="recursos-label">Recursos Digitales</div>
+  <h2 class="recursos-title">Entrena con criterio,<br>a tu ritmo</h2>
+  <p class="recursos-subtitle">Productos diseñados para que puedas progresar sin coaching. Acceso inmediato, entrega automática.</p>
+
+  <div class="recursos-grid">
+
+    <!-- RUN SMART -->
+    <div class="recurso-card">
+      <div class="recurso-badge">📖 Ebook</div>
+      <div class="recurso-name">Run Smart</div>
+      <div class="recurso-tagline">Corre mejor. Entrena con criterio.</div>
+      <p class="recurso-desc">Una guía práctica para corredores que buscan mejorar su rendimiento, comprender las intensidades y aprender a planificar sus entrenamientos. Menos improvisación. Más entrenamiento inteligente.</p>
+      <div class="recurso-divider"></div>
+      <ul class="recurso-includes">
+        <li>Evaluaciones y control de intensidad (RPE, zonas, LT1/LT2)</li>
+        <li>22 sesiones de running catalogadas por nivel y objetivo</li>
+        <li>Entrenamiento complementario de fuerza + técnica</li>
+        <li>Programas progresivos de 8 semanas: Base Aeróbica, 5K y 10K</li>
+      </ul>
+      <div class="recurso-price-row">
+        <div class="recurso-price">$9.990</div>
+        <div class="recurso-price-note">Pago único<br>Descarga inmediata</div>
+      </div>
+      <a class="recurso-btn" href="https://www.flow.cl/btn.php?token=w5cf74becd545af7f9309834f17e7ab61ae4f09b" target="_blank" rel="noopener">Comprar Ahora →</a>
+    </div>
+
+    <!-- HYBRID SOLID -->
+    <div class="recurso-card">
+      <div class="recurso-badge">🏋️ Programa</div>
+      <div class="recurso-name">Hybrid Solid</div>
+      <div class="recurso-tagline">Fuerza. Running. Rendimiento híbrido.</div>
+      <p class="recurso-desc">Un programa de 12 semanas diseñado para deportistas con experiencia previa que buscan desarrollar fuerza, mejorar en 5K y potenciar su capacidad aeróbica. Un sistema. Dos capacidades. Un atleta más completo.</p>
+      <div class="recurso-divider"></div>
+      <ul class="recurso-includes">
+        <li>3 sesiones de fuerza + 2 de running por semana</li>
+        <li>Acondicionamiento híbrido y capacidad aeróbica</li>
+        <li>Evaluaciones iniciales y finales para medir progreso</li>
+        <li>12 semanas de estructura progresiva con criterio</li>
+      </ul>
+      <div class="recurso-price-row">
+        <div class="recurso-price">$30.000</div>
+        <div class="recurso-price-note">Pago único<br>Acceso inmediato</div>
+      </div>
+      <a class="recurso-btn" href="https://www.flow.cl/btn.php?token=bc67c8d8946d75131b353cc15457270266646f06" target="_blank" rel="noopener">Comprar Ahora →</a>
+    </div>
+
+  </div>
+</section>
+
 <section class="testi-new-section" id="testimonials">
   <div class="testi-new-inner">
     <p class="section-label" style="text-align:center">Lo que dicen los atletas</p>
@@ -2641,112 +2861,6 @@
 <!-- FAQ -->
 
 <!-- FAQ MEJORADO -->
-<section class="faq-new-section" id="faq">
-  <div class="faq-new-inner">
-    <p class="section-label" style="text-align:center">Preguntas frecuentes</p>
-    <div class="faq-new-list">
-
-      
-      <div class="faq-new-item reveal rd1">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Puedo hacer el programa si soy principiante?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Sí. Programas como Running, WIN y EMPOWER están diseñados para todos los niveles, desde cero. Lo importante es tu disposición y consistencia — el plan se adapta a donde estás hoy.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd2">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Cómo accedo al programa una vez inscrito?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Una vez confirmado el pago, recibes el acceso a Teambuildr o TrainingPeaks según el programa. Todo tu plan ya estará cargado y listo para entrenar desde cualquier dispositivo, el mismo día.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd3">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿El programa incluye alimentación?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Los programas se enfocan en el entrenamiento. Sin embargo, se entregan pautas generales de nutrición deportiva para complementar tu proceso. Si necesitas un plan nutricional personalizado, te orientamos hacia el especialista adecuado.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd1">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Necesito equipo especial para entrenar?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Depende del programa. Running solo necesitas zapatillas. Para HYROX y Hybrid se necesita acceso a gimnasio con barras, pesas y ski-erg o rower. Si tienes dudas sobre tu equipamiento, escríbenos antes de inscribirte.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd2">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Qué pasa si viajo o me enfermo?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Los programas se ajustan a tu realidad. Si viajas o no puedes entrenar, avisas por WhatsApp y Pablo adapta el plan. No pierdes días ni semanas — el proceso se moldea a ti.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd3">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Puedo cambiar de programa después?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Sí. Muchos atletas empiezan en Running o Hybrid y avanzan hacia HYROX o Performance a medida que progresan. Puedes cambiar de programa al inicio de cualquier nuevo mes.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd4">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Cuántas veces a la semana entreno?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Varía por programa y nivel, pero en general entre 3 y 5 sesiones semanales. El plan se estructura respetando tus tiempos de recuperación para que rindas sin lesionarte.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd5">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Cómo es el seguimiento?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Pablo revisa tu progreso semanalmente en la plataforma, ajusta cargas y responde por WhatsApp. No es un plan que se sube y se olvida — hay una comunicación real y continua durante todo el proceso.</div>
-      </div>
-
-      <div class="faq-new-item reveal rd6">
-        <button class="faq-new-q" onclick="toggleFaqNew(this)">
-          ¿Puedo pagar mensual y cancelar cuando quiera?
-          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </button>
-        <div class="faq-new-a">Sí. El pago es mensual y no hay contratos. Puedes continuar o pausar mes a mes según tus metas y disponibilidad.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- SOCIAL -->
-<section class="social-section">
-  <p class="section-label">Síguenos</p>
-  <div class="social-row">
-    <a href="https://www.instagram.com/forteprograms/" target="_blank" class="social-btn ig">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
-      Instagram
-    </a>
-    <a href="https://wa.me/56956445332" target="_blank" class="social-btn wa">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-      </svg>
-      WhatsApp
-    </a>
-  </div>
-</section>
-
-
-<!-- COACH SECTION -->
 <section id="coach" class="coach-section">
   <div class="coach-inner">
     <p class="coach-label">Tu coach</p>
@@ -2903,6 +3017,115 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 </script>
+
+
+<!-- RECURSOS DIGITALES -->
+<section class="faq-new-section" id="faq">
+  <div class="faq-new-inner">
+    <p class="section-label" style="text-align:center">Preguntas frecuentes</p>
+    <div class="faq-new-list">
+
+      
+      <div class="faq-new-item reveal rd1">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo hacer el programa si soy principiante?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. Programas como Running, WIN y EMPOWER están diseñados para todos los niveles, desde cero. Lo importante es tu disposición y consistencia — el plan se adapta a donde estás hoy.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd2">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cómo accedo al programa una vez inscrito?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Una vez confirmado el pago, recibes el acceso a Teambuildr o TrainingPeaks según el programa. Todo tu plan ya estará cargado y listo para entrenar desde cualquier dispositivo, el mismo día.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd3">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿El programa incluye alimentación?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Los programas se enfocan en el entrenamiento. Sin embargo, se entregan pautas generales de nutrición deportiva para complementar tu proceso. Si necesitas un plan nutricional personalizado, te orientamos hacia el especialista adecuado.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd1">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Necesito equipo especial para entrenar?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Depende del programa. Running solo necesitas zapatillas. Para HYROX y Hybrid se necesita acceso a gimnasio con barras, pesas y ski-erg o rower. Si tienes dudas sobre tu equipamiento, escríbenos antes de inscribirte.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd2">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Qué pasa si viajo o me enfermo?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Los programas se ajustan a tu realidad. Si viajas o no puedes entrenar, avisas por WhatsApp y Pablo adapta el plan. No pierdes días ni semanas — el proceso se moldea a ti.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd3">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo cambiar de programa después?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. Muchos atletas empiezan en Running o Hybrid y avanzan hacia HYROX o Performance a medida que progresan. Puedes cambiar de programa al inicio de cualquier nuevo mes.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd4">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cuántas veces a la semana entreno?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Varía por programa y nivel, pero en general entre 3 y 5 sesiones semanales. El plan se estructura respetando tus tiempos de recuperación para que rindas sin lesionarte.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd5">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Cómo es el seguimiento?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Pablo revisa tu progreso semanalmente en la plataforma, ajusta cargas y responde por WhatsApp. No es un plan que se sube y se olvida — hay una comunicación real y continua durante todo el proceso.</div>
+      </div>
+
+      <div class="faq-new-item reveal rd6">
+        <button class="faq-new-q" onclick="toggleFaqNew(this)">
+          ¿Puedo pagar mensual y cancelar cuando quiera?
+          <span class="faq-icon-btn"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </button>
+        <div class="faq-new-a">Sí. El pago es mensual y no hay contratos. Puedes continuar o pausar mes a mes según tus metas y disponibilidad.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SOCIAL -->
+<section class="social-section">
+  <p class="section-label">Síguenos</p>
+  <div class="social-row">
+    <a href="https://www.instagram.com/forteprograms/" target="_blank" class="social-btn ig">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://wa.me/56956445332" target="_blank" class="social-btn wa">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<!-- COACH SECTION -->
 
 <!-- MOBILE CTA BAR -->
 <div class="mobile-cta-bar" id="mobile-cta">
